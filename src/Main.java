@@ -1,4 +1,5 @@
 import inheritance.*;
+import polymorphism.*;
 public class Main {
     Employee joe = new SalariedEmployee(
             "Joe", "Jones", "111-11-1111", 2500);
@@ -16,6 +17,8 @@ public class Main {
             "Mahnaz", "Vaziri", "777-77-7777", 22, 40000);
 
     public static void main(String[] args) {
+        Ship a = new Ship("Speed", "1996");
+        System.out.println(a);
         System.out.println("Hello world!");
     }
 }
