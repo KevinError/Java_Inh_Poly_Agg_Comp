@@ -17,8 +17,6 @@ public class Main {
             "Mahnaz", "Vaziri", "777-77-7777", 22, 40000);
 
     public static void main(String[] args) {
-        Ship a = new Ship("Speed", "1996");
-        System.out.println(a);
-        System.out.println("Hello world!");
+
     }
 }
