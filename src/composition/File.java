@@ -17,6 +17,6 @@ public class File {
 
     @Override
     public String toString() {
-        return "Name of the file: " + this.name;
+        return "Name of file: " + this.name;
     }
 }

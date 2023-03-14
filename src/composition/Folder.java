@@ -1,33 +1,78 @@
 package composition;
 
+import polymorphism.Ship;
+
 import java.util.List;
 
 public class Folder {
-    private List<File> files;
-    private List<Folder> folders;
-    public Folder(List<File> files, List<Folder> folders){
-        this.files = files;
-        this.folders = folders;
+    private File[] subfiles;
+    private Folder[] subfolders;
+    private String nameFolder;
+
+    public Folder(String nameFolder, Folder[] folders, File[] files){
+        this.subfiles = files;
+        this.subfolders = folders;
+        this.nameFolder = nameFolder;
     }
 
-    public List<File> getFiles() {
-        return files;
+    public Folder(String nameFolder, File[] files){
+        this.subfiles = files;
+        this.nameFolder = nameFolder;
+        this.subfolders = null;
     }
 
-    public void setFiles(List<File> files) {
-        this.files = files;
+    public Folder(String nameFolder, Folder[] folders){
+        this.subfolders = folders;
+        this.nameFolder = nameFolder;
+        this.subfiles = null;
     }
 
-    public List<Folder> getFolders() {
-        return folders;
+    public Folder(String nameFolder){
+        this.nameFolder = nameFolder;
+        this.subfolders = null;
+        this.subfiles = null;
+    }
+    public File[] getSubfiles() {
+        return subfiles;
     }
 
-    public void setFolders(List<Folder> folders) {
-        this.folders = folders;
+    public void setSubfiles(File[] subfiles) {
+        this.subfiles = subfiles;
+    }
+
+    public Folder[] getSubfolders() {
+        return subfolders;
+    }
+
+    public void setSubfolders(Folder[] subfolders) {
+        this.subfolders = subfolders;
+    }
+
+    public String getNameFolder() {
+        return nameFolder;
+    }
+
+    public void setNameFolder(String nameFolder) {
+        this.nameFolder = nameFolder;
     }
 
     @Override
     public String toString() {
-        return this.files.toString() + ", " + this.folders.toString();
+        String files = "";
+        String folders = "";
+        if (subfiles != null){
+            files += ", Files: ";
+            for (File file: subfiles){
+                files = files + " " + file.toString();
+            }
+        }
+        if (subfolders != null) {
+            folders += ", Sub Folders: ";
+            for (Folder folder: subfolders){
+                folders = folders + "Sub Folder of " + this.nameFolder + ": " + folder.toString();
+            }
+        }
+        return "Name of folder: " + this.nameFolder +
+                files + ", \n" + folders;
     }
 }

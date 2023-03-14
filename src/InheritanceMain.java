@@ -1,6 +1,6 @@
 import inheritance.*;
-import polymorphism.*;
-public class Main {
+
+public class InheritanceMain {
 
     public static void main(String[] args) {
         SalariedEmployee joe = new SalariedEmployee(
